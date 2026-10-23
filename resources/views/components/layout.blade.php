@@ -8,7 +8,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{{ $title ? $title.' · ' : '' }}{{ config('app.name', 'Inkwell') }}</title>
+        <title>{{ $title ? $title.' · ' : '' }}{{ config('app.name', 'IIB Group 2') }}</title>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,7 +46,7 @@
             <div class="mx-auto max-w-7xl px-6 lg:px-10">
                 <nav class="mt-4 flex items-center justify-between rounded-xl border-2 border-[#0f1026] bg-white/80 px-4 py-3 shadow-[6px_6px_0_#0f1026] backdrop-blur-sm transition-colors duration-300 dark:border-cyan-300/60 dark:bg-slate-900/70 dark:shadow-[6px_6px_0_rgba(34,211,238,0.25)]">
                     <div class="flex items-center gap-4">
-                        <a href="{{ route('home') }}" class="font-display text-lg font-bold tracking-tight dark:text-cyan-100">{{ config('app.name', 'Inkwell') }}</a>
+                        <a href="{{ route('home') }}" class="font-display text-lg font-bold tracking-tight dark:text-cyan-100">{{ config('app.name', 'IIB Group 2') }}</a>
                         <div class="hidden items-center gap-3 text-sm font-medium sm:flex">
                             <a href="{{ route('home') }}" class="hover:underline decoration-2 underline-offset-4">Home</a>
                             <a href="{{ route('blog.index') }}" class="hover:underline decoration-2 underline-offset-4">All Posts</a>
@@ -69,7 +69,7 @@
 
         <footer class="border-t-2 border-[#0f1026] bg-white/70 mt-auto transition-colors duration-300 dark:border-cyan-300/50 dark:bg-slate-950/80">
             <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-8 text-sm text-[#3a3f6b] sm:flex-row lg:px-10 dark:text-slate-400">
-                <p>&copy; {{ now()->year }} {{ config('app.name', 'Inkwell') }}. Neo-Brutal × Frutiger Aero.</p>
+                <p>&copy; {{ now()->year }} {{ config('app.name', 'IIB Group 2') }}. Neo-Brutal × Frutiger Aero.</p>
                 <div class="flex items-center gap-4 font-semibold">
                     <a href="{{ route('home') }}" class="hover:underline decoration-2 underline-offset-4">Home</a>
                     <a href="{{ route('blog.index') }}" class="hover:underline decoration-2 underline-offset-4">Blog</a>
