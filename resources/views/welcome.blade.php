@@ -72,7 +72,7 @@
                         <div class="mt-6 flex flex-wrap items-center gap-3">
                             <a href="{{ route('blog.index') }}" class="rounded-lg border-2 border-[#0f1026] bg-cyan-300 px-5 py-2.5 font-semibold shadow-[4px_4px_0_#0f1026] transition-transform hover:-translate-y-0.5 hover:shadow-[5px_5px_0_#0f1026] dark:border-cyan-200 dark:bg-cyan-400 dark:text-slate-950 dark:shadow-[4px_4px_0_rgba(34,211,238,0.4)] dark:hover:shadow-[5px_5px_0_rgba(34,211,238,0.5)]">Read the archive</a>
                             @if ($categories->isNotEmpty())
-                                <a href="{{ route('blog.index', ['category' => $categories->first()]) }}" class="rounded-lg border-2 border-[#0f1026] bg-white px-5 py-2.5 font-semibold shadow-[4px_4px_0_#0f1026] transition-transform hover:-translate-y-0.5 hover:shadow-[5px_5px_0_#0f1026] dark:border-cyan-300/70 dark:bg-slate-950/80 dark:text-cyan-100 dark:shadow-[4px_4px_0_rgba(34,211,238,0.25)] dark:hover:shadow-[5px_5px_0_rgba(34,211,238,0.3)]">Explore {{ $categories->first() }}</a>
+                                <a href="{{ $categories->first()->url() }}" class="rounded-lg border-2 border-[#0f1026] bg-white px-5 py-2.5 font-semibold shadow-[4px_4px_0_#0f1026] transition-transform hover:-translate-y-0.5 hover:shadow-[5px_5px_0_#0f1026] dark:border-cyan-300/70 dark:bg-slate-950/80 dark:text-cyan-100 dark:shadow-[4px_4px_0_rgba(34,211,238,0.25)] dark:hover:shadow-[5px_5px_0_rgba(34,211,238,0.3)]">Explore {{ $categories->first()->name }}</a>
                             @endif
                         </div>
                     </div>
@@ -116,7 +116,7 @@
                             <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-cyan-300 via-sky-300 to-blue-300 dark:from-cyan-400 dark:via-sky-400 dark:to-blue-500"></div>
                             <div class="flex flex-col gap-3 p-6">
                                 <div class="flex items-center justify-between text-xs font-semibold uppercase tracking-[0.25em] text-[#3a3f6b] dark:text-slate-400">
-                                    <span>{{ $post->category }}</span>
+                                    <span>{{ $post->category->name ?? 'Uncategorized' }}</span>
                                     <time>{{ $post->published_at?->format('M d, Y') }}</time>
                                 </div>
                                 <a href="{{ $post->url }}" class="font-display text-xl font-bold leading-snug group-hover:underline decoration-2 underline-offset-4 dark:text-cyan-100">{{ $post->title }}</a>
@@ -143,7 +143,11 @@
                     @if ($categories->isNotEmpty())
                         <div class="mt-6 flex flex-wrap gap-2 lg:mt-0">
                             @foreach ($categories as $category)
-                                <a href="{{ route('blog.index', ['category' => $category]) }}" class="rounded-full border-2 border-[#0f1026] bg-white px-4 py-1.5 text-sm font-semibold shadow-[3px_3px_0_#0f1026] transition-transform hover:-translate-y-0.5 hover:shadow-[4px_4px_0_#0f1026] dark:border-cyan-300/70 dark:bg-slate-950/80 dark:text-cyan-100 dark:shadow-[3px_3px_0_rgba(34,211,238,0.25)] dark:hover:shadow-[4px_4px_0_rgba(34,211,238,0.3)]">{{ $category }}</a>
+                                <a href="{{ $category->url() }}"
+                                    class="rounded-full border-2 border-[#0f1026] bg-white px-4 py-1.5 text-sm font-semibold shadow-[3px_3px_0_#0f1026] transition-transform hover:-translate-y-0.5 hover:shadow-[4px_4px_0_#0f1026] dark:border-cyan-300/70 dark:bg-slate-950/80 dark:text-cyan-100 dark:shadow-[3px_3px_0_rgba(34,211,238,0.25)] dark:hover:shadow-[4px_4px_0_rgba(34,211,238,0.3)]">
+                                    {{ $category->name }}
+                                    <span class="ml-1 text-[0.65em] font-normal opacity-70">{{ $category->post_count }}</span>
+                                </a>
                             @endforeach
                         </div>
                     @endif

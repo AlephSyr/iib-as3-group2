@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Category;
 use App\Models\Post;
 
 it('lists published posts on the blog index', function () {
@@ -48,21 +49,35 @@ it('paginates the blog index', function () {
 });
 
 it('filters the blog index by category', function () {
-    Post::factory()->create(['title' => 'Laravel Deep Dive', 'category' => 'Laravel']);
-    Post::factory()->create(['title' => 'CSS Grid Guide', 'category' => 'Design']);
+    $laravel = Category::factory()->create(['name' => 'Laravel', 'slug' => 'laravel']);
+    $design = Category::factory()->create(['name' => 'Design', 'slug' => 'design']);
 
-    $this->get(route('blog.index', ['category' => 'Laravel']))
+    Post::factory()->create(['title' => 'Laravel Deep Dive', 'category_id' => $laravel->id]);
+    Post::factory()->create(['title' => 'CSS Grid Guide', 'category_id' => $design->id]);
+
+    $this->get(route('blog.index', ['category' => $laravel->slug]))
         ->assertOk()
         ->assertSee('Laravel Deep Dive')
         ->assertDontSee('CSS Grid Guide');
 });
 
-it('lists the available categories as filters', function () {
-    Post::factory()->create(['category' => 'Opinion']);
-    Post::factory()->create(['category' => 'Career']);
+it('lists only active categories with published posts as filters', function () {
+    $laravel = Category::factory()->create(['name' => 'Laravel', 'slug' => 'laravel']);
+    $opinion = Category::factory()->create(['name' => 'Opinion', 'slug' => 'opinion']);
+
+    Post::factory()->create(['category_id' => $laravel->id]);
+    Post::factory()->unpublished()->create(['category_id' => $opinion->id]);
 
     $this->get(route('blog.index'))
         ->assertOk()
-        ->assertSee('Opinion')
-        ->assertSee('Career');
+        ->assertSee($laravel->name)
+        ->assertDontSee($opinion->name);
+});
+
+it('only shows categories that have at least one published post', function () {
+    Category::factory()->create(['name' => 'Empty Category', 'slug' => 'empty-category']);
+
+    $this->get(route('blog.index'))
+        ->assertOk()
+        ->assertDontSee('Empty Category');
 });
