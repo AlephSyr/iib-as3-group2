@@ -65,12 +65,6 @@
                 </div>
 
                 <div class="rounded-[1rem] border-2 border-[#0f1026] bg-white p-6 shadow-[6px_6px_0_#0f1026] dark:border-cyan-300/60 dark:bg-slate-900/80 dark:shadow-[6px_6px_0_rgba(34,211,238,0.2)]">
-                    <div class="flex items-center gap-2 border-b-2 border-[#0f1026] pb-3 mb-4 dark:border-cyan-300/60">
-                        <span class="h-2.5 w-2.5 rounded-full border-2 border-[#0f1026] bg-cyan-300 dark:border-cyan-300/60 dark:bg-cyan-400"></span>
-                        <span class="h-2.5 w-2.5 rounded-full border-2 border-[#0f1026] bg-cyan-200 dark:border-cyan-300/60 dark:bg-cyan-400/60"></span>
-                        <span class="h-2.5 w-2.5 rounded-full border-2 border-[#0f1026] bg-cyan-100 dark:border-cyan-300/60 dark:bg-cyan-400/30"></span>
-                        <span class="ml-auto text-xs font-semibold uppercase tracking-[0.3em] dark:text-cyan-100">publish.panel</span>
-                    </div>
                     <div class="grid gap-6 md:grid-cols-3">
                         <div class="mb-6">
                             <label for="status_display" class="block mb-2 text-sm font-semibold text-[#3a3f6b] dark:text-slate-400">Publish Status</label>
@@ -83,12 +77,22 @@
 
                         <div class="mb-6">
                             <label for="published_at" class="block mb-2 text-sm font-semibold text-[#3a3f6b] dark:text-slate-400">Published By</label>
-                            <input id="published_at" type="datetime-local" name="published_at" value="{{ old('published_at', isset($post) ? ($post->published_at?->format('Y-m-d\H:i') ?? now()->format('Y-m-d\H:i')) : now()->format('Y-m-d\H:i')) ?? now()->format('Y-m-d\H:i') }}" class="w-full rounded-lg border-2 border-[#0f1026] bg-white px-4 py-2.5 shadow-[3px_3px_0_#0f1026] focus:border-cyan-500 focus:outline-none transition-colors dark:border-cyan-300/60 dark:bg-slate-950/80 dark:text-slate-100 dark:shadow-[3px_3px_0_rgba(34,211,238,0.25)] dark:focus:border-cyan-400">
+                            <div class="relative">
+                                <input id="published_at" type="datetime-local" name="published_at" value="{{ old('published_at', isset($post) ? ($post->published_at?->format('Y-m-d\H:i') ?? now()->format('Y-m-d\H:i')) : now()->format('Y-m-d\H:i')) ?? now()->format('Y-m-d\H:i') }}" class="w-full rounded-lg border-2 border-[#0f1026] bg-white px-4 py-2.5 pr-10 shadow-[3px_3px_0_#0f1026] focus:border-cyan-500 focus:outline-none transition-colors dark:border-cyan-300/60 dark:bg-slate-950/80 dark:text-slate-100 dark:shadow-[3px_3px_0_rgba(34,211,238,0.25)] dark:focus:border-cyan-400">
+                                <button type="button" class="absolute inset-y-0 right-2.5 flex items-center pr-1 text-[#0f1026] dark:text-cyan-100 pointer-events-none select-none opacity-60">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                </button>
+                            </div>
                         </div>
 
                         <div class="mb-6">
                             <label for="scheduled_at" class="block mb-2 text-sm font-semibold text-[#3a3f6b] dark:text-slate-400">Scheduled At</label>
-                            <input id="scheduled_at" type="datetime-local" name="scheduled_at" value="{{ old('scheduled_at', isset($post) ? $post->scheduled_at?->format('Y-m-d\H:i') : '') }}" class="w-full rounded-lg border-2 border-[#0f1026] bg-white px-4 py-2.5 shadow-[3px_3px_0_#0f1026] focus:border-cyan-500 focus:outline-none transition-colors dark:border-cyan-300/60 dark:bg-slate-950/80 dark:text-slate-100 dark:shadow-[3px_3px_0_rgba(34,211,238,0.25)] dark:focus:border-cyan-400">
+                            <div class="relative">
+                                <input id="scheduled_at" type="datetime-local" name="scheduled_at" value="{{ old('scheduled_at', isset($post) ? $post->scheduled_at?->format('Y-m-d\H:i') : '') }}" class="w-full rounded-lg border-2 border-[#0f1026] bg-white px-4 py-2.5 pr-10 shadow-[3px_3px_0_#0f1026] focus:border-cyan-500 focus:outline-none transition-colors dark:border-cyan-300/60 dark:bg-slate-950/80 dark:text-slate-100 dark:shadow-[3px_3px_0_rgba(34,211,238,0.25)] dark:focus:border-cyan-400">
+                                <button type="button" class="absolute inset-y-0 right-2.5 flex items-center pr-1 text-[#0f1026] dark:text-cyan-100 pointer-events-none select-none opacity-60">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                </button>
+                            </div>
                             <p class="mt-1 text-xs text-[#3a3f6b] dark:text-slate-500">Only used when status is Scheduled.</p>
                         </div>
                     </div>
