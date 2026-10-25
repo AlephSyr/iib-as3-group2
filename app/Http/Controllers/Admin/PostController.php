@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Post;
 use App\Services\CategoryExtractor;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -103,6 +104,24 @@ class PostController extends Controller
             'published_at' => 'nullable|date',
             'scheduled_at' => 'nullable|date|after:now',
         ]);
+
+        // Parse date strings to Carbon instances for reliable persistence
+        if (isset($validated['published_at']) && filled($validated['published_at'])) {
+            $validated['published_at'] = Carbon::parse($validated['published_at']);
+        }
+
+        if (isset($validated['scheduled_at']) && filled($validated['scheduled_at'])) {
+            $validated['scheduled_at'] = Carbon::parse($validated['scheduled_at']);
+        }
+
+        // Null out dates that don't match the current status
+        if ($validated['status'] !== 'published') {
+            $validated['published_at'] = null;
+        }
+
+        if ($validated['status'] !== 'scheduled') {
+            $validated['scheduled_at'] = null;
+        }
 
         $post->update($validated);
 

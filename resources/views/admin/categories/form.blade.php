@@ -35,7 +35,8 @@
 
                     <div class="mb-6">
                         <div class="flex items-center">
-                            <input id="is_active" name="is_active" type="checkbox" class="rounded border-2 border-[#0f1026] bg-white shadow-[2px_2px_0_#0f1026] focus:border-cyan-500 focus:outline-none transition-colors dark:border-cyan-300/60 dark:bg-slate-950/80 dark:shadow-[2px_2px_0_rgba(34,211,238,0.25)] dark:focus:border-cyan-400" {{ old('is_active', $category?->is_active ?? true) ? 'checked' : '' }}>
+                            <input type="hidden" name="is_active" value="0">
+                            <input id="is_active" name="is_active" type="checkbox" value="1" class="rounded border-2 border-[#0f1026] bg-white shadow-[2px_2px_0_#0f1026] focus:border-cyan-500 focus:outline-none transition-colors dark:border-cyan-300/60 dark:bg-slate-950/80 dark:shadow-[2px_2px_0_rgba(34,211,238,0.25)] dark:focus:border-cyan-400" {{ old('is_active', $category?->is_active ?? true) ? 'checked' : '' }}>
                             <label for="is_active" class="ml-3 text-sm font-semibold text-[#3a3f6b] dark:text-slate-400">Active (shown on site)</label>
                         </div>
                     </div>
