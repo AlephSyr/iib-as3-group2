@@ -13,6 +13,12 @@
                 </span>
                 <time class="text-sm font-semibold text-[#3a3f6b] dark:text-slate-400">{{ $post->published_at?->format('F d, Y') }}</time>
                 <span class="text-sm font-semibold text-[#3a3f6b] dark:text-slate-400">By {{ $post->author_name }}</span>
+                <form action="{{ route('blog.like', $post->slug) }}" method="POST">
+                    @csrf
+                    <button type="submit" class="inline-flex items-center gap-1 rounded-full border-2 border-[#0f1026] bg-cyan-300 px-3 py-1 text-xs font-semibold shadow-[3px_3px_0_#0f1026] transition-transform hover:-translate-y-0.5 hover:shadow-[4px_4px_0_#0f1026] dark:border-cyan-200 dark:bg-cyan-400 dark:text-slate-950 dark:shadow-[3px_3px_0_rgba(34,211,238,0.4)] dark:hover:shadow-[4px_4px_0_rgba(34,211,238,0.5)]">
+                        ♥ {{ $post->like ?? 0 }} likes
+                    </button>
+                </form>
             </div>
             <h1 class="mt-4 font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl dark:text-cyan-100">
                 {{ $post->title }}

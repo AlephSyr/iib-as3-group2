@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Post;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -49,5 +51,20 @@ class PostController extends Controller
             ->first();
 
         return view('blog.show', compact('post', 'previous', 'next'));
+    }
+
+    public function like(Post $post): JsonResponse|RedirectResponse
+    {
+        if (! $post->isPublished()) {
+            abort(404);
+        }
+
+        $post->increment('like');
+
+        if (request()->wantsJson()) {
+            return response()->json(['likes' => $post->fresh()->like]);
+        }
+
+        return back();
     }
 }
