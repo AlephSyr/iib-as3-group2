@@ -16,9 +16,10 @@
             All
         </a>
         @foreach ($categories as $category)
-            <a href="{{ route('blog.index', ['category' => $category]) }}"
-                class="rounded-full border-2 border-[#0f1026] px-4 py-1.5 text-sm font-semibold shadow-[3px_3px_0_#0f1026] transition-transform hover:-translate-y-0.5 hover:shadow-[4px_4px_0_#0f1026] dark:border-cyan-300/70 dark:shadow-[3px_3px_0_rgba(34,211,238,0.25)] {{ request('category') === $category ? 'bg-cyan-300 dark:bg-cyan-400 dark:text-slate-950' : 'bg-white dark:bg-slate-950/80 dark:text-cyan-100' }}">
-                {{ $category }}
+            <a href="{{ $category->url() }}"
+                class="rounded-full border-2 border-[#0f1026] px-4 py-1.5 text-sm font-semibold shadow-[3px_3px_0_#0f1026] transition-transform hover:-translate-y-0.5 hover:shadow-[4px_4px_0_#0f1026] dark:border-cyan-300/70 dark:shadow-[3px_3px_0_rgba(34,211,238,0.25)] {{ request('category') === $category->slug ? 'bg-cyan-300 dark:bg-cyan-400 dark:text-slate-950' : 'bg-white dark:bg-slate-950/80 dark:text-cyan-100' }}">
+                {{ $category->name }}
+                <span class="ml-1 text-[0.65em] font-normal opacity-70">{{ $category->post_count }}</span>
             </a>
         @endforeach
     </div>
@@ -32,7 +33,7 @@
                 @endif
                 <div class="flex flex-col gap-3 p-6">
                     <div class="flex items-center justify-between text-xs font-semibold uppercase tracking-[0.25em] text-[#3a3f6b] dark:text-slate-400">
-                        <span>{{ $post->category }}</span>
+                        <span>{{ $post->category->name ?? 'Uncategorized' }}</span>
                         <time>{{ $post->published_at?->format('M d, Y') }}</time>
                     </div>
                     <a href="{{ $post->url }}" class="font-display text-xl font-bold leading-snug group-hover:underline decoration-2 underline-offset-4 dark:text-cyan-100">{{ $post->title }}</a>
