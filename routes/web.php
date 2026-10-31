@@ -11,6 +11,7 @@ Route::get('/', [PostController::class, 'home'])->name('home');
 
 Route::get('/blog', [PostController::class, 'index'])->name('blog.index');
 Route::get('/blog/{post:slug}', [PostController::class, 'show'])->name('blog.show');
+Route::post('/blog/{post:slug}/like', [PostController::class, 'like'])->name('blog.like');
 
 Route::prefix('admin')->name('admin.')->middleware('admin')->group(function () {
     Route::get('dashboard', DashboardController::class)->name('dashboard');

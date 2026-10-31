@@ -14,7 +14,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-#[Fillable(['title', 'slug', 'category_id', 'author_name', 'excerpt', 'content', 'featured_image', 'status', 'published_at', 'scheduled_at'])]
+#[Fillable(['title', 'slug', 'category_id', 'author_name', 'excerpt', 'content', 'featured_image', 'status', 'published_at', 'scheduled_at', 'like'])]
 #[RouteKey('slug')]
 #[SoftDeletes]
 class Post extends Model

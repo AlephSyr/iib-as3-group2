@@ -40,7 +40,12 @@
                     <p class="text-sm text-[#3a3f6b] line-clamp-3 dark:text-slate-400">{{ $post->excerpt }}</p>
                     <div class="mt-auto flex items-center justify-between text-sm">
                         <span class="text-[#3a3f6b] dark:text-slate-400">By {{ $post->author_name }}</span>
-                        <span class="rounded-md border-2 border-[#0f1026] bg-cyan-200 px-2 py-1 font-semibold shadow-[2px_2px_0_#0f1026] dark:border-cyan-200 dark:bg-cyan-400 dark:text-slate-950 dark:shadow-[2px_2px_0_rgba(34,211,238,0.4)]">Read →</span>
+                        <div class="flex items-center gap-2">
+                            <span class="inline-flex items-center gap-1 rounded-md border-2 border-[#0f1026] bg-cyan-200 px-2 py-1 font-semibold shadow-[2px_2px_0_#0f1026] dark:border-cyan-200 dark:bg-cyan-400 dark:text-slate-950 dark:shadow-[2px_2px_0_rgba(34,211,238,0.4)]">
+                                ♥ {{ $post->like ?? 0 }}
+                            </span>
+                            <span class="rounded-md border-2 border-[#0f1026] bg-cyan-200 px-2 py-1 font-semibold shadow-[2px_2px_0_#0f1026] dark:border-cyan-200 dark:bg-cyan-400 dark:text-slate-950 dark:shadow-[2px_2px_0_rgba(34,211,238,0.4)]">Read →</span>
+                        </div>
                     </div>
                 </div>
             </article>
