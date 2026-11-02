@@ -123,7 +123,7 @@
                                 <p class="text-sm text-[#3a3f6b] dark:text-slate-400">{{ Str::limit($post->excerpt, 130) }}</p>
                                 <div class="mt-auto flex items-center justify-between text-sm">
                                     <span class="text-[#3a3f6b] dark:text-slate-400">By {{ $post->author_name }}</span>
-                                    <span class="rounded-md border-2 border-[#0f1026] bg-cyan-200 px-2 py-1 font-semibold shadow-[2px_2px_0_#0f1026] dark:border-cyan-200 dark:bg-cyan-400 dark:text-slate-950 dark:shadow-[2px_2px_0_rgba(34,211,238,0.4)]">Read →</span>
+                                    <a href="{{ $post->url }}" class="rounded-md border-2 border-[#0f1026] bg-cyan-200 px-2 py-1 font-semibold shadow-[2px_2px_0_#0f1026] dark:border-cyan-200 dark:bg-cyan-400 dark:text-slate-950 dark:shadow-[2px_2px_0_rgba(34,211,238,0.4)]">Read →</a>
                                 </div>
                             </div>
                         </article>
