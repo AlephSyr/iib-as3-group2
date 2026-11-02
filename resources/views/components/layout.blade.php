@@ -73,6 +73,7 @@
                 <div class="flex items-center gap-4 font-semibold">
                     <a href="{{ route('home') }}" class="hover:underline decoration-2 underline-offset-4">Home</a>
                     <a href="{{ route('blog.index') }}" class="hover:underline decoration-2 underline-offset-4">Blog</a>
+                    <button id="scrollToTop" type="button" aria-label="Scroll to top" class="rounded-full border-2 border-[#0f1026] bg-cyan-300 px-3 py-1 font-semibold shadow-[3px_3px_0_#0f1026] transition-transform hover:-translate-y-0.5 hover:shadow-[4px_4px_0_#0f1026] dark:border-cyan-200 dark:bg-cyan-400 dark:text-slate-950 dark:shadow-[3px_3px_0_rgba(34,211,238,0.4)]">↑ Top</button>
                 </div>
             </div>
         </footer>
@@ -90,7 +91,7 @@
                 });
             })();
         </script>
-    </body>
+                <button id="scrollToTop" type="button" aria-label="Scroll to top" class="rounded-full border-2 border-[#0f1026] bg-cyan-300 px-3 py-1 font-semibold shadow-[3px_3px_0_#0f1026] transition-transform hover:-translate-y-0.5 hover:shadow-[4px_4px_0_#0f1026] dark:border-cyan-200 dark:bg-cyan-400 dark:text-slate-950 dark:shadow-[3px_3px_0_rgba(34,211,238,0.4)]">↑ Top</button>
 </html>
 
 
