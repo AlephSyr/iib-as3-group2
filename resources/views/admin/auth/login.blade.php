@@ -3,7 +3,7 @@
         <div class="rounded-[1.25rem] border-2 border-[#0f1026] bg-white shadow-[12px_12px_0_#0f1026] dark:border-cyan-300/60 dark:bg-slate-900/90 dark:shadow-[12px_12px_0_rgba(34,211,238,0.25)]">
             <div class="p-8 sm:p-10">
                 <div class="text-center mb-8">
-                    <a href="{{ route('admin.dashboard') }}" class="font-display text-2xl font-bold tracking-tight dark:text-cyan-100">{{ config('app.name', 'IIB Group 2') }}</a>
+                    <a href="{{ route('admin.dashboard') }}" class="font-display text-2xl font-bold tracking-tight dark:text-cyan-100">{{ config('app.name', 'Everyblog') }}</a>
                     <p class="mt-2 text-sm text-[#3a3f6b] dark:text-slate-400">Admin sign-in</p>
                 </div>
 
