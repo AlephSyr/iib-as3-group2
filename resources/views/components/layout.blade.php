@@ -91,7 +91,16 @@
                 });
             })();
         </script>
-                <button id="scrollToTop" type="button" aria-label="Scroll to top" class="rounded-full border-2 border-[#0f1026] bg-cyan-300 px-3 py-1 font-semibold shadow-[3px_3px_0_#0f1026] transition-transform hover:-translate-y-0.5 hover:shadow-[4px_4px_0_#0f1026] dark:border-cyan-200 dark:bg-cyan-400 dark:text-slate-950 dark:shadow-[3px_3px_0_rgba(34,211,238,0.4)]">↑ Top</button>
+        <script>
+            (function () {
+                var btn = document.getElementById('scrollToTop');
+                if (!btn) return;
+                btn.addEventListener('click', function () {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            })();
+        </script>
+    </body>
 </html>
 
 

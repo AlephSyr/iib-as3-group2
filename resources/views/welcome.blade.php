@@ -67,8 +67,8 @@
                 <div class="mt-10 grid gap-8 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] lg:items-center">
                     <div>
                         <span class="inline-flex items-center gap-2 rounded-full border-2 border-[#0f1026] bg-white/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] shadow-[3px_3px_0_#0f1026] transition-colors duration-300 dark:border-cyan-300/60 dark:bg-slate-900/70 dark:text-cyan-100 dark:shadow-[3px_3px_0_rgba(34,211,238,0.25)]">Alif × Zenn × Zul</span>
-                        <h1 class="mt-6 font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl dark:text-cyan-100">Publish glossy thoughts with hard edges.</h1>
-                        <p class="mt-4 max-w-xl text-lg text-[#1f2340] dark:text-slate-400">A bright, glassy blog template with bold drop-shadows, crisp grids, and readable typography built for Laravel.</p>
+                        <h1 class="mt-6 font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl dark:text-cyan-100">THE STORIES CORNER</h1>
+                        <p class="mt-4 max-w-xl text-lg text-[#1f2340] dark:text-slate-400">"A space for ideas, stories and inspiration. Explore engaging articles, discover fresh perspectives, and stay informed on topics that matter in everyday life."</p>
                         <div class="mt-6 flex flex-wrap items-center gap-3">
                             <a href="{{ route('blog.index') }}" class="rounded-lg border-2 border-[#0f1026] bg-cyan-300 px-5 py-2.5 font-semibold shadow-[4px_4px_0_#0f1026] transition-transform hover:-translate-y-0.5 hover:shadow-[5px_5px_0_#0f1026] dark:border-cyan-200 dark:bg-cyan-400 dark:text-slate-950 dark:shadow-[4px_4px_0_rgba(34,211,238,0.4)] dark:hover:shadow-[5px_5px_0_rgba(34,211,238,0.5)]">Read the archive</a>
                             @if ($categories->isNotEmpty())
@@ -83,7 +83,7 @@
                                 <span class="h-2.5 w-2.5 rounded-full border-2 border-[#0f1026] bg-rose-300 dark:border-rose-400/80 dark:bg-rose-500/80"></span>
                                 <span class="h-2.5 w-2.5 rounded-full border-2 border-[#0f1026] bg-amber-200 dark:border-amber-400/80 dark:bg-amber-400/80"></span>
                                 <span class="h-2.5 w-2.5 rounded-full border-2 border-[#0f1026] bg-emerald-300 dark:border-emerald-400/80 dark:bg-emerald-400/80"></span>
-                                <span class="ml-auto text-xs font-semibold uppercase tracking-[0.3em] dark:text-cyan-100">glassy.panel</span>
+                                <span class="ml-auto text-xs font-semibold uppercase tracking-[0.3em] dark:text-cyan-100">The Latest Ink</span>
                             </div>
                             <div class="space-y-4 p-6">
                                 <div>
@@ -105,8 +105,8 @@
             <section class="mx-auto max-w-7xl px-6 lg:px-10">
                 <div class="mt-12 flex flex-wrap items-center justify-between gap-4">
                     <div>
-                        <h2 class="font-display text-3xl font-bold tracking-tight dark:text-cyan-100">Latest drops</h2>
-                        <p class="mt-2 text-[#3a3f6b] dark:text-slate-400">Fresh from the archive, rendered with glossy panels and brutal borders.</p>
+                        <h2 class="font-display text-3xl font-bold tracking-tight dark:text-cyan-100">Latest Articles</h2>
+                        <p class="mt-2 text-[#3a3f6b] dark:text-slate-400">Explore our newest stories, ideas and articles from variance of topics.</p>
                     </div>
                     <a href="{{ route('blog.index') }}" class="rounded-lg border-2 border-[#0f1026] bg-white px-4 py-2 text-sm font-semibold shadow-[3px_3px_0_#0f1026] transition-transform hover:-translate-y-0.5 hover:shadow-[4px_4px_0_#0f1026] dark:border-cyan-300/70 dark:bg-slate-950/80 dark:text-cyan-100 dark:shadow-[3px_3px_0_rgba(34,211,238,0.25)] dark:hover:shadow-[4px_4px_0_rgba(34,211,238,0.3)]">View all</a>
                 </div>
@@ -136,9 +136,9 @@
             <section class="mx-auto max-w-7xl px-6 lg:px-10">
                 <div class="mt-12 mb-16 rounded-[1.25rem] border-2 border-[#0f1026] bg-gradient-to-br from-white via-cyan-50 to-sky-100 p-8 shadow-[10px_10px_0_#0f1026] sm:p-10 lg:flex lg:items-center lg:justify-between dark:border-cyan-300/60 dark:from-slate-900/90 dark:via-cyan-950/40 dark:to-sky-950/40 dark:shadow-[10px_10px_0_rgba(34,211,238,0.25)]">
                     <div>
-                        <span class="inline-flex items-center rounded-full border-2 border-[#0f1026] bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] shadow-[3px_3px_0_#0f1026] dark:border-cyan-300/70 dark:bg-slate-950/80 dark:text-cyan-100 dark:shadow-[3px_3px_0_rgba(34,211,238,0.25)]">Browse by vibe</span>
-                        <h3 class="mt-4 font-display text-3xl font-bold tracking-tight dark:text-cyan-100">Pick a category and dive in.</h3>
-                        <p class="mt-2 max-w-2xl text-[#3a3f6b] dark:text-slate-400">Tutorials, Laravel, PHP, design, career advice, and opinion pieces — all in a glossy, hard-edged theme.</p>
+                        <span class="inline-flex items-center rounded-full border-2 border-[#0f1026] bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] shadow-[3px_3px_0_#0f1026] dark:border-cyan-300/70 dark:bg-slate-950/80 dark:text-cyan-100 dark:shadow-[3px_3px_0_rgba(34,211,238,0.25)]">Find your next obsession</span>
+                        <h3 class="mt-4 font-display text-3xl font-bold tracking-tight dark:text-cyan-100">Let curiosity lead and explore the world.</h3>
+                        <p class="mt-2 max-w-2xl text-[#3a3f6b] dark:text-slate-400">Tech & Innovation, Food & Lifestyle, education, Travel & Culture, Growth & Success, and Life & inspiration — Explore it all in one place.</p>
                     </div>
                     @if ($categories->isNotEmpty())
                         <div class="mt-6 flex flex-wrap gap-2 lg:mt-0">
