@@ -90,7 +90,7 @@ php artisan db:seed --force
 This creates the database tables and seeds:
 - Default categories
 - Sample posts
-- Admin user: `admin@inkwell.test` / `password`
+- Admin user: `admin@iib.test` / `password`
 
 ### 6. Build frontend assets
 
