@@ -4,7 +4,7 @@ A full-featured blog application built with Laravel 13, featuring a neo-brutalis
 
 ## Tech Stack
 
-- **Framework:** Laravel 13 (PHP 8.5)
+- **Framework:** Laravel 13
 - **Database:** SQLite (default), configurable via `.env`
 - **Frontend:** Tailwind CSS v4, Vite 8
 - **Testing:** Pest
@@ -90,7 +90,7 @@ php artisan db:seed --force
 This creates the database tables and seeds:
 - Default categories
 - Sample posts
-- Admin user: `admin@inkwell.test` / `password`
+- Admin user: `admin@iib.test` / `password`
 
 ### 6. Build frontend assets
 

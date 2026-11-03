@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{{ $title ? $title.' · ' : '' }}Admin · {{ config('app.name', 'IIB Group 2') }}</title>
+        <title>{{ $title ? $title.' · ' : '' }}Admin · {{ config('app.name', 'Everyblog') }}</title>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,7 +40,7 @@
             <div class="mx-auto max-w-7xl px-6 lg:px-10">
                 <nav class="mt-4 flex items-center justify-between rounded-xl border-2 border-[#0f1026] bg-white/80 px-4 py-3 shadow-[6px_6px_0_#0f1026] backdrop-blur-sm transition-colors duration-300 dark:border-cyan-300/60 dark:bg-slate-900/70 dark:shadow-[6px_6px_0_rgba(34,211,238,0.25)]">
                     <div class="flex items-center gap-4">
-                        <a href="{{ route('admin.dashboard') }}" class="font-display text-lg font-bold tracking-tight dark:text-cyan-100">{{ config('app.name', 'IIB Group 2') }}</a>
+                        <a href="{{ route('admin.dashboard') }}" class="font-display text-lg font-bold tracking-tight dark:text-cyan-100">{{ config('app.name', 'Everyblog') }}</a>
                         <span class="text-xs font-semibold uppercase tracking-[0.25em] rounded-lg border-2 border-[#0f1026] bg-cyan-100 px-2 py-1 dark:border-cyan-300/60 dark:bg-cyan-900/30 dark:text-cyan-100 shadow-[2px_2px_0_#0f1026] dark:shadow-[2px_2px_0_rgba(34,211,238,0.25)]">Admin</span>
                     </div>
                     <div class="flex items-center gap-2 text-sm">
@@ -71,7 +71,7 @@
 
         <footer class="border-t-2 border-[#0f1026] bg-white/70 mt-auto transition-colors duration-300 dark:border-cyan-300/50 dark:bg-slate-950/80">
             <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-8 text-sm text-[#3a3f6b] sm:flex-row lg:px-10 dark:text-slate-400">
-                <p>&copy; {{ now()->year }} {{ config('app.name', 'IIB Group 2') }}. Admin Panel.</p>
+                <p>&copy; {{ now()->year }} {{ config('app.name', 'Everyblog') }}. Admin Panel.</p>
                 <div class="flex items-center gap-4 font-semibold">
                     <a href="{{ route('admin.dashboard') }}" class="hover:underline decoration-2 underline-offset-4">Dashboard</a>
                     <a href="{{ route('admin.posts.index') }}" class="hover:underline decoration-2 underline-offset-4">Posts</a>

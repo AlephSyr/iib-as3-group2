@@ -14,9 +14,37 @@ class PostFactory extends Factory
     /**
      * @return list<string>
      */
+    private static int $index = 0;
+
     public function definition(): array
     {
-        $title = rtrim($this->faker->sentence(6), '.');
+        $titles = [
+            'The Future of Technology: What Every Professional Should Know',
+            'How to Build Habits That Actually Last',
+            'Education in the Digital Age: Opportunities and Challenges',
+            'Travel Smarter: A Guide to Meaningful Journeys',
+            'The Mindset Shift That Drives Real Success',
+            'Finding Inspiration in Everyday Moments',
+            'Innovation at Work: Turning Ideas into Impact',
+            'The Art of Living Well in a Busy World',
+            'Lifelong Learning: Your Competitive Advantage',
+            'Cultural Bridges: How Travel Changes Perspective',
+            'From Goals to Growth: A Practical Framework',
+            'Stories That Inspire: Lessons from Ordinary People',
+            'Technology Trends Reshaping Our Future',
+            'Designing a Life You Love',
+            'The Power of Continuous Education',
+            'Exploring the World, One City at a Time',
+            'Success Habits of High Performers',
+            'Inspiration Found in Nature and Art',
+            'Digital Transformation for Modern Teams',
+            'Living with Purpose and Intention',
+        ];
+
+        $i = self::$index % count($titles);
+        self::$index++;
+
+        $title = $titles[$i];
         $slug = Str::slug($title);
         $category = Category::inRandomOrder()->first() ?? Category::factory()->create();
 
@@ -25,8 +53,8 @@ class PostFactory extends Factory
             'slug' => $slug,
             'category_id' => $category->id,
             'author_name' => $this->faker->name(),
-            'excerpt' => $this->faker->sentence(20),
-            'content' => $this->content($category->name),
+            'excerpt' => 'A professional, in-depth look at ideas that matter today.',
+            'content' => $this->content($category->name, $title),
             'featured_image' => "https://picsum.photos/seed/{$slug}/1200/630",
             'status' => 'published',
             'published_at' => $this->faker->dateTimeBetween('-6 months', 'now'),
@@ -51,28 +79,26 @@ class PostFactory extends Factory
         ]);
     }
 
-    protected function content(string $categoryName): string
+    protected function content(string $categoryName, string $title): string
     {
-        $categoryHint = $this->faker->boolean(30)
-            ? "\n\n<p>This is a post about {$categoryName}.</p>\n\n"
-            : '';
-
-        $paragraphs = collect(range(1, 4))
-            ->map(fn (): string => '<p>'.$this->faker->paragraph(5).'</p>')
-            ->implode("\n\n");
-
-        $list = collect(range(1, 4))
-            ->map(fn (): string => '<li>'.$this->faker->sentence(8).'</li>')
-            ->implode('');
+        if (str_contains($categoryName, 'Food')) {
+            return implode("\n\n", [
+                '<p>Food is more than nourishment—it is culture, connection, and creativity. In this article, we explore how thoughtful choices in what we eat can transform everyday life.</p>',
+                '<h2>The Joy of Cooking</h2>',
+                '<p>From simple home meals to gourmet experiences, cooking brings people together and sparks joy. Discover techniques that make preparation both efficient and enjoyable.</p>',
+                '<ul><li>Plan balanced meals with seasonal ingredients.</li><li>Master a few versatile recipes.</li><li>Share meals to build community.</li></ul>',
+                '<blockquote><p>“Good food is the foundation of genuine happiness.”</p></blockquote>',
+                '<p>Embrace a lifestyle where food and well-being go hand in hand.</p>',
+            ]);
+        }
 
         return implode("\n\n", [
-            $categoryHint,
-            $paragraphs,
-            '<h2>'.$this->faker->sentence(4).'</h2>',
-            '<p>'.$this->faker->paragraph(6).'</p>',
-            '<ul>'.$list.'</ul>',
-            '<blockquote><p>'.$this->faker->sentence(14).'</p></blockquote>',
-            '<p>'.$this->faker->paragraph(5).'</p>',
+            '<p>'.fake()->paragraph(6).'</p>',
+            '<h2>Why This Matters</h2>',
+            '<p>'.fake()->paragraph(7).'</p>',
+            '<ul><li>'.fake()->sentence(10).'</li><li>'.fake()->sentence(10).'</li><li>'.fake()->sentence(10).'</li></ul>',
+            '<blockquote><p>'.fake()->sentence(16).'</p></blockquote>',
+            '<p>'.fake()->paragraph(5).'</p>',
         ]);
     }
 }

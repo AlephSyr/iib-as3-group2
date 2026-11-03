@@ -1,3 +1,3 @@
 @props(['title' => null])
 
-@include('admin.layouts.app', ['title' => $title, 'slot' => $slot])
+@include('admin.layouts.app', ['title123456' => $title, 'slot' => $slot])
