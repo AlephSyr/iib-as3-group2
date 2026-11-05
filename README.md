@@ -226,3 +226,10 @@ npm run dev                   # Start Vite dev server
 ## License
 
 MIT
+
+## Individual reflection:
+Alif:
+
+Zenn:During this project, I've noticed that i could do better when working with a clear goal and ensuring we are in the same page as we work on creating the website. I helped reviewing the setup of the repo when it was first published and made sure to test the herd setup worked on my machine, which then i submitted the review in the GitHub and merged it from Alif's pull request at the start of the project. I also worked on the feature of adding in a like button and ensured that it worked properly. The second feature i created is an about us page where if users click on our name in the homepage, it will take them to a page where it shows who worked on the website. Created a pull request after I pushed my feature branch into the GitHub and had Alif review and ensure the feature was working properly. After the project concluded, i proceeded to test the herd project on my machine to ensure that all the features added by the team are working properly. The problem that I encountered while working on this project is managing branches as i work on 2 different features, where i made a mistake of working in the "like button" feature branch while intending on working on the "about us" feature branch. This has made a problem where I had to reverse my changes in the "like button" feature branch and start redo my work in "about us" page.
+
+Zul:
