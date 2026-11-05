@@ -20,6 +20,11 @@ class PostController extends Controller
         return view('welcome', compact('featured', 'latest', 'categories'));
     }
 
+    public function team(): View
+    {
+        return view('team');
+    }
+
     public function index(Request $request): View
     {
         $categories = Category::activeWithPosts()->get();
