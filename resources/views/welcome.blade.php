@@ -66,7 +66,7 @@
             <section class="mx-auto max-w-7xl px-6 lg:px-10">
                 <div class="mt-10 grid gap-8 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] lg:items-center">
                     <div>
-                        <span class="inline-flex items-center gap-2 rounded-full border-2 border-[#0f1026] bg-white/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] shadow-[3px_3px_0_#0f1026] transition-colors duration-300 dark:border-cyan-300/60 dark:bg-slate-900/70 dark:text-cyan-100 dark:shadow-[3px_3px_0_rgba(34,211,238,0.25)]">Alif × Zenn × Zul</span>
+                        <a href="{{ route('team') }}" class="inline-flex items-center gap-2 rounded-full border-2 border-[#0f1026] bg-white/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] shadow-[3px_3px_0_#0f1026] transition-transform duration-300 hover:-translate-y-0.5 dark:border-cyan-300/60 dark:bg-slate-900/70 dark:text-cyan-100 dark:shadow-[3px_3px_0_rgba(34,211,238,0.25)] dark:hover:shadow-[4px_4px_0_rgba(34,211,238,0.3)]">Alif × Zenn × Zul</a>
                         <h1 class="mt-6 font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl dark:text-cyan-100">THE STORIES CORNER</h1>
                         <p class="mt-4 max-w-xl text-lg text-[#1f2340] dark:text-slate-400">"A space for ideas, stories and inspiration. Explore engaging articles, discover fresh perspectives, and stay informed on topics that matter in everyday life."</p>
                         <div class="mt-6 flex flex-wrap items-center gap-3">
